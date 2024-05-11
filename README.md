@@ -1,6 +1,6 @@
 # Book's Store Tracker
 
-This project implements Flask and a SQLite database to create a program for bookstore tracking.
+##This project implements Flask (web framework) and a SQLite database to create a program for bookstore tracking.
 
 1. app.py 
 - Set up and run a server. Create routes on the server to connect to the HTML pages that created in a separate file.
