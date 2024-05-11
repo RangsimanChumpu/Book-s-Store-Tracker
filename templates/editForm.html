@@ -1,0 +1,48 @@
+{% extends "layout.html"%}
+
+{% block body %}
+<div class = "container">
+    <div class="row">
+        <div class="col-md-6 my-2">
+            <h3>Edit Transaction</h3>
+            <form action="/updateStatement" method="post">
+
+                <input type="hidden" value="{{statement.id}}" name="id"/>
+
+                <div class="form-group">
+                    <label for="date">D/M/Y</label>
+                    <input type="date" name="date" class="form-control" value="{{statement.date}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Book's name</label>
+                    <input type="text" name="name" class="form-control" value="{{statement.name}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="prices">Prices</label>
+                    <input type="text" name="prices" class="form-control" value="{{statement.prices}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" name="amount" class="form-control" value="{{statement.amount}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" class="form-control">
+                        <option value="Mystery">Mystery</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                        <option value="Nonfiction">Nonfiction</option>
+                    </select>
+                </div>
+                <input type="Submit" value="Update Transaction" class="btn btn-primary my-2">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

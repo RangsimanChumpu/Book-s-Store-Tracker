@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="container my-2">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Books</th>
+                    <th>Prices</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in statements %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.prices | currencyFormat}}</td>
+                    <td>{{item.amount}}</td>
+                    <td><span class="badge bg-primary">{{item.category}}</span></td>
+                    <td>{{item.date}}</td>
+                    <td>
+                        <a href="/delete/{{item.id}}" class="btn btn-sm btn-danger">delete</a>
+                    </td>
+                    <td>
+                        <a href="/edit/{{item.id}}" class="btn btn-sm btn-success">edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
